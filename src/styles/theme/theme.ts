@@ -1,3 +1,4 @@
+import 'styled-components'
 import {
   CSSObject,
   SimpleInterpolation,
@@ -20,21 +21,19 @@ export const theme = {
     bold: '700',
   },
   media: {
-    desktop: (
+    phone: (
       desktop: CSSObject | TemplateStringsArray,
       ...interpolations: SimpleInterpolation[]
     ): FlattenSimpleInterpolation => css`
-      @media screen and (min-width: 960px) {
-        ${css(desktop, ...interpolations)}
-      }
-    `,
-    tablet: (
-      desktop: CSSObject | TemplateStringsArray,
-      ...interpolations: SimpleInterpolation[]
-    ): FlattenSimpleInterpolation => css`
-      @media (min-width: 520px) {
+      @media (max-width: 600px) {
         ${css(desktop, ...interpolations)}
       }
     `,
   },
 } as const
+
+type AppTheme = typeof theme
+
+declare module 'styled-components' {
+  interface DefaultTheme extends AppTheme {}
+}

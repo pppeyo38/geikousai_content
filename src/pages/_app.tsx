@@ -1,10 +1,12 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import reset from 'styled-reset'
 import { theme } from '@/styles/theme/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
@@ -13,3 +15,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  body {
+    background: #000000;
+  }
+`
