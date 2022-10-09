@@ -10,6 +10,7 @@ export const TitleJa = ({ children }: Props) => {
 }
 
 const _H1 = styled.h1`
+  display: inline-block;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.senobi};
   font-size: 66px;
@@ -17,6 +18,7 @@ const _H1 = styled.h1`
   line-height: 96px;
   letter-spacing: -0.2em;
   transform: rotate(90deg);
+  transform-origin: left bottom;
 
   ${({ theme }) => theme.media.phone`
     font-size: 37px;

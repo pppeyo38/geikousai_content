@@ -1,7 +1,8 @@
-import { TitleEn } from '@/components/atoms/TitleEn'
-import { TitleJa } from '@/components/atoms/TitleJa'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
+import { TitleEn } from '@/components/atoms/TitleEn'
+import { TitleJa } from '@/components/atoms/TitleJa'
 
 const Catalog: NextPage = () => {
   return (
