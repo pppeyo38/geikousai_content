@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { url } from '@/utils/config'
 
 export const LinkButton = () => {
   return (
     <_A href="">
-      <img src={`/LinkButton.svg`} />
+      <img src={url('/LinkButton.svg')} />
     </_A>
   )
 }
