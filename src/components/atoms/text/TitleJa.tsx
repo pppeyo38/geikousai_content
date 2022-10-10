@@ -17,8 +17,8 @@ const _H1 = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: 96px;
   letter-spacing: -0.2em;
-  transform: rotate(90deg);
-  transform-origin: left bottom;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 
   ${({ theme }) => theme.media.phone`
     font-size: 37px;
