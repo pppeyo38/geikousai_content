@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { TitleEn } from '@/components/atoms/TitleEn'
 import { TitleJa } from '@/components/atoms/TitleJa'
 import { Text } from '@/components/atoms/Text'
+import { Creator } from '@/components/atoms/Creator'
 
 const Catalog: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Catalog: NextPage = () => {
         あいうえおあいうえおあいうえお あいうえおあいうえおあいうえお
         あいうえおあいうえおあいうえお あいうえお
       </Text>
+      <Creator>3M hiremori / 3M morikoro</Creator>
     </>
   )
 }
