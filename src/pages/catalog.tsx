@@ -6,6 +6,7 @@ import { TitleJa } from '@/components/atoms/text/TitleJa'
 import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
+import { Pagination } from '@/components/molecules/Pagination'
 
 const Catalog: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Catalog: NextPage = () => {
       </Text>
       <Creator>3M hiremori / 3M morikoro</Creator>
       <LinkButton />
+      <Pagination focusId={3} />
     </>
   )
 }
