@@ -12,8 +12,8 @@ export const theme = {
     white: '#FFFFFF',
   },
   fontFamily: {
-    DIN: 'din-condensed, sans-serif',
-    senobi: 'senobi-gothic,sans-serif',
+    DIN: `'DIN Condensed', sans-serif`,
+    senobi: `'senobi-gothic', sans-serif`,
   },
   fontWeight: {
     regular: '400',
