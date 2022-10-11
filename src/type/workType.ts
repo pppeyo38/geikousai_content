@@ -1,4 +1,4 @@
-export type workType = {
+export type workContent = {
   title: string
   ja: boolean
   thumnail: string
@@ -7,4 +7,8 @@ export type workType = {
   outline: string
   link: string
   onlyPC?: boolean
+}
+
+export type worksDataProps = {
+  worksData: workContent[]
 }

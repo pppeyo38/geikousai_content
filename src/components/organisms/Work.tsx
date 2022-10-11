@@ -5,10 +5,15 @@ import { TitleJa } from '@/components/atoms/text/TitleJa'
 import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
+import { workContent } from '@/type/workType'
 
-import { workType } from '@/type/workType'
-
-export const Work = ({ title, ja, creator, creator2, outline }: workType) => {
+export const Work = ({
+  title,
+  ja,
+  creator,
+  creator2,
+  outline,
+}: workContent) => {
   return (
     <_WorkWrap>
       {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
