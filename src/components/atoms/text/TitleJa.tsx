@@ -18,7 +18,7 @@ const _H1 = styled.h1`
   line-height: 96px;
   letter-spacing: -0.2em;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  text-orientation: sideways;
 
   ${({ theme }) => theme.media.phone`
     font-size: 37px;
