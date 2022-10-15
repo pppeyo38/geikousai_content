@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import { TitleEn } from '@/components/atoms/text/TitleEn'
 import { TitleJa } from '@/components/atoms/text/TitleJa'
@@ -30,7 +30,9 @@ export const Work = ({
             {creator}
             {creator2 && ` / ${creator2}`}
           </Creator>
-          <Text>{outline}</Text>
+          <_TextWrap inView={inView}>
+            <Text>{outline}</Text>
+          </_TextWrap>
         </_DetailWrap>
       </_ContentWrap>
       <_BtnWrap>
@@ -39,6 +41,12 @@ export const Work = ({
     </_WorkWrap>
   )
 }
+
+const ToRight = keyframes`
+100% {
+  width: 0%;
+}
+`
 
 const _WorkWrap = styled.div`
   display: flex;
@@ -71,6 +79,27 @@ const _DetailWrap = styled.div`
   gap: 16px;
   margin-top: 19px;
   padding-left: 25px;
+`
+
+const _TextWrap = styled.div<{ inView: boolean }>`
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    ${(props) =>
+      props.inView &&
+      css`
+        animation: 1.5s ${ToRight} forwards;
+      `}
+  }
 `
 
 const _BtnWrap = styled.div`
