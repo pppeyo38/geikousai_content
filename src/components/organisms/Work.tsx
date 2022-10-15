@@ -8,6 +8,8 @@ import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { workContent } from '@/type/workType'
 
+import { Reveal, RevealContentWrap } from '@/styles/textReveal'
+
 export const Work = ({
   title,
   ja,
@@ -39,34 +41,17 @@ export const Work = ({
   )
 }
 
-const _fadeIn = keyframes`
-  100% {
-    height: 0%;
-  }
-`
-
 const _WorkWrap = styled.div`
   display: flex;
   gap: 10px;
 `
 
-const _TitleWrap = styled.div<{ inView: boolean }>`
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-
+const _TitleWrap = styled(RevealContentWrap)<{ inView: boolean }>`
   &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
     ${(props) =>
       props.inView &&
       css`
-        animation: 1s ${_fadeIn} forwards;
+        animation: 1s ${Reveal} forwards;
       `}
   }
 `
