@@ -10,13 +10,14 @@ export const TitleEn = ({ children }: Props) => {
 }
 
 const _H1 = styled.h1`
+  display: inline-block;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.DIN};
   font-size: 70px;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: 84px;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  white-space: pre;
 
   ${({ theme }) => theme.media.phone`
     font-size: 40px;
