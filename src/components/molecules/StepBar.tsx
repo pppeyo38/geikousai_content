@@ -1,17 +1,21 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { RevealFromTop, HiddenFromBtm } from '@/styles/textReveal'
 
 type Props = {
   focusId: number
+  inView: boolean
 }
 
-export const StepBar = ({ focusId }: Props) => {
+export const StepBar = ({ focusId, inView }: Props) => {
   return (
     <_Wrap>
-      <_Work1 isActive={focusId === 1} />
-      <_Work2 isActive={focusId === 2} />
-      <_Work3 isActive={focusId === 3} />
-      <_Work4 isActive={focusId === 4} />
-      <_Work5 isActive={focusId === 5} />
+      <_RevealWrap inView={inView}>
+        <_Work1 isActive={focusId === 1} />
+        <_Work2 isActive={focusId === 2} />
+        <_Work3 isActive={focusId === 3} />
+        <_Work4 isActive={focusId === 4} />
+        <_Work5 isActive={focusId === 5} />
+      </_RevealWrap>
     </_Wrap>
   )
 }
@@ -30,6 +34,29 @@ const _Wrap = styled.div`
 
   * + * {
     margin-top: 10px;
+  }
+`
+
+const _RevealWrap = styled.div<{ inView: boolean }>`
+  width: 20px;
+  height: 350px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${({ theme }) => theme.colors.black};
+    ${(props) =>
+      props.inView
+        ? css`
+            animation: 1s ${RevealFromTop} forwards;
+          `
+        : css`
+            animation: 0.5s ${HiddenFromBtm} forwards;
+          `}
   }
 `
 

@@ -12,6 +12,15 @@ export const RevealFromLeft = keyframes`
   }
 `
 
+export const HiddenFromBtm = keyframes`
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+`
+
 export const RevealWrap = styled.div`
   position: relative;
   width: fit-content;

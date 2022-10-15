@@ -19,8 +19,8 @@ export const IndexLayout = ({ worksData }: worksDataProps) => {
 
   return (
     <_Container height={useHeight}>
-      {!inView && <StepBar focusId={focusId} />}
       <_Section ref={ref} height={useHeight}>
+        <StepBar focusId={focusId} inView={!inView} />
         <HeroArea />
       </_Section>
       {worksData.map((item, index) => (
@@ -33,7 +33,6 @@ export const IndexLayout = ({ worksData }: worksDataProps) => {
 }
 
 const _Container = styled.article<{ height: string }>`
-  position: relative;
   overflow: auto;
   scroll-snap-type: y mandatory;
   height: ${(props) => props.height};
