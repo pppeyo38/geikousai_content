@@ -20,6 +20,7 @@ const _H1 = styled.h1`
   white-space: pre;
 
   ${({ theme }) => theme.media.phone`
+    width: 48px;
     font-size: 40px;
     line-height: 48px;
   `}
