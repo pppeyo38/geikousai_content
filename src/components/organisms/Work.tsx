@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+import styled, { css, keyframes } from 'styled-components'
 
 import { TitleEn } from '@/components/atoms/text/TitleEn'
 import { TitleJa } from '@/components/atoms/text/TitleJa'
@@ -14,9 +15,13 @@ export const Work = ({
   creator2,
   outline,
 }: workContent) => {
+  const { ref, inView } = useInView()
+
   return (
     <_WorkWrap>
-      {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
+      <_TitleWrap ref={ref} inView={inView}>
+        {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
+      </_TitleWrap>
       <_ContentWrap>
         <_ImageWrap />
         <_DetailWrap>
@@ -34,9 +39,36 @@ export const Work = ({
   )
 }
 
+const _fadeIn = keyframes`
+  100% {
+    height: 0%;
+  }
+`
+
 const _WorkWrap = styled.div`
   display: flex;
   gap: 10px;
+`
+
+const _TitleWrap = styled.div<{ inView: boolean }>`
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    ${(props) =>
+      props.inView &&
+      css`
+        animation: 1s ${_fadeIn} forwards;
+      `}
+  }
 `
 
 const _ContentWrap = styled.div`
