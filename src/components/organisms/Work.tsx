@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer'
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { TitleEn } from '@/components/atoms/text/TitleEn'
 import { TitleJa } from '@/components/atoms/text/TitleJa'
@@ -7,7 +7,7 @@ import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { workContent } from '@/type/workType'
-import { Reveal, RevealContentWrap } from '@/styles/textReveal'
+import { RevealFromTop, RevealFromLeft, RevealWrap } from '@/styles/textReveal'
 
 export const Work = ({
   title,
@@ -42,23 +42,19 @@ export const Work = ({
   )
 }
 
-const ToRight = keyframes`
-100% {
-  width: 0%;
-}
-`
-
 const _WorkWrap = styled.div`
   display: flex;
   gap: 10px;
 `
 
-const _TitleWrap = styled(RevealContentWrap)<{ inView: boolean }>`
+const _TitleWrap = styled(RevealWrap)<{ inView: boolean }>`
   &:before {
+    bottom: 0;
+    left: 0;
     ${(props) =>
       props.inView &&
       css`
-        animation: 1s ${Reveal} forwards;
+        animation: 1s ${RevealFromTop} forwards;
       `}
   }
 `
@@ -81,23 +77,14 @@ const _DetailWrap = styled.div`
   padding-left: 25px;
 `
 
-const _TextWrap = styled.div<{ inView: boolean }>`
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-
+const _TextWrap = styled(RevealWrap)<{ inView: boolean }>`
   &:before {
-    content: '';
-    position: absolute;
     bottom: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
     ${(props) =>
       props.inView &&
       css`
-        animation: 1.5s ${ToRight} forwards;
+        animation: 1.2s ${RevealFromLeft} forwards;
       `}
   }
 `

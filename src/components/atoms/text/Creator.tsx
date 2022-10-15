@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 
+import { RevealWrap, RevealFromLeft } from '@/styles/textReveal'
+
 type Props = {
   inView: boolean
   children: ReactNode
@@ -10,7 +12,9 @@ export const Creator = ({ inView, children }: Props) => {
   return (
     <_Wrap>
       <_Span inView={inView} />
-      <_P>{children}</_P>
+      <_NameWrap inView={inView}>
+        <_P>{children}</_P>
+      </_NameWrap>
     </_Wrap>
   )
 }
@@ -47,6 +51,19 @@ const _Span = styled.span<{ inView: boolean }>`
     css`
       animation: 1s ${Stroke} forwards;
     `}
+`
+
+const _NameWrap = styled(RevealWrap)<{ inView: boolean }>`
+  &:before {
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    ${(props) =>
+      props.inView &&
+      css`
+        animation: 1.2s ${RevealFromLeft} forwards;
+      `}
+  }
 `
 
 const _P = styled.p`

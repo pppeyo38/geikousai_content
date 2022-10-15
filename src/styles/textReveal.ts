@@ -1,12 +1,18 @@
 import styled, { keyframes } from 'styled-components'
 
-export const Reveal = keyframes`
+export const RevealFromTop = keyframes`
   100% {
     height: 0%;
   }
 `
 
-export const RevealContentWrap = styled.div`
+export const RevealFromLeft = keyframes`
+  100% {
+    width: 0%;
+  }
+`
+
+export const RevealWrap = styled.div`
   position: relative;
   width: fit-content;
   height: fit-content;
@@ -14,10 +20,8 @@ export const RevealContentWrap = styled.div`
   &:before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: ${({ theme }) => theme.colors.black};
   }
 `
