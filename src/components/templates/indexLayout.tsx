@@ -11,7 +11,7 @@ import { worksDataProps } from '@/type/workType'
 export const IndexLayout = ({ worksData }: worksDataProps) => {
   const height = use100vh()
   const { ref, inView } = useInView({
-    rootMargin: '-100px',
+    rootMargin: '-200px',
   })
 
   const useHeight = height ? `${height}px` : '100vh'
@@ -46,5 +46,3 @@ const _Section = styled.section<{ height: string }>`
   scroll-snap-align: start;
   height: ${(props) => props.height};
 `
-
-const _WorksBlock = styled.div``

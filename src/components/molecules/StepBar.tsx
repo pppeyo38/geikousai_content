@@ -24,6 +24,7 @@ const Rect = styled.div`
   width: 14px;
   height: 58px;
   border: 1px solid ${({ theme }) => theme.colors.white};
+  transition: all 0.7s;
 `
 
 const _Wrap = styled.div`
@@ -52,7 +53,7 @@ const _RevealWrap = styled.div<{ inView: boolean }>`
     ${(props) =>
       props.inView
         ? css`
-            animation: 1s ${RevealFromTop} forwards;
+            animation: 0.5s ${RevealFromTop} forwards;
           `
         : css`
             animation: 0.5s ${HiddenFromBtm} forwards;
