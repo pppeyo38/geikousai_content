@@ -36,6 +36,10 @@ const _Wrap = styled.div`
   * + * {
     margin-top: 10px;
   }
+
+  ${({ theme }) => theme.media.phone`
+    display: none;
+  `}
 `
 
 const _RevealWrap = styled.div<{ inView: boolean }>`

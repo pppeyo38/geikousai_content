@@ -21,11 +21,19 @@ export const theme = {
     bold: '700',
   },
   media: {
+    tablet: (
+      desktop: CSSObject | TemplateStringsArray,
+      ...interpolations: SimpleInterpolation[]
+    ): FlattenSimpleInterpolation => css`
+      @media (max-width: 834px) {
+        ${css(desktop, ...interpolations)}
+      }
+    `,
     phone: (
       desktop: CSSObject | TemplateStringsArray,
       ...interpolations: SimpleInterpolation[]
     ): FlattenSimpleInterpolation => css`
-      @media (max-width: 600px) {
+      @media (max-width: 414px) {
         ${css(desktop, ...interpolations)}
       }
     `,

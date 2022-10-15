@@ -26,6 +26,19 @@ const _Section = styled.section`
   width: 959px;
   height: 586px;
   margin: 0 auto;
+
+  ${({ theme }) => theme.media.phone`
+    width: 340px;
+    height: 473px;
+    grid-template-columns: 121px 73px 122px;
+    grid-template-rows: 121px 73px 122px 121px;
+    gap: 12px 12px;
+    grid-template-areas:
+    "One One Five"
+    "Two Three Five"
+    "Two Four Four"
+    "Seven Six Six";
+  `}
 `
 
 const _divOne = styled.div`
