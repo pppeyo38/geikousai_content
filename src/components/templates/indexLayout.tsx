@@ -15,15 +15,7 @@ export const IndexLayout = ({ worksData }: worksDataProps) => {
       </_Section>
       {worksData.map((item, index) => (
         <_Section key={index} height={useHeight}>
-          <Work
-            title={item.title}
-            ja={item.ja}
-            thumnail={item.thumnail}
-            creator={item.creator}
-            creator2={item.creator2}
-            outline={item.outline}
-            link={item.link}
-          />
+          <Work {...item} />
         </_Section>
       ))}
     </_Container>
