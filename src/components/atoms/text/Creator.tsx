@@ -57,8 +57,9 @@ const _Span = styled.span<{ inView: boolean }>`
 const _NameWrap = styled(RevealWrap)<{ inView: boolean }>`
   &:before {
     z-index: 1;
-    bottom: 0;
+    top: 0;
     right: 0;
+    height: 120%;
     ${(props) =>
       props.inView &&
       css`

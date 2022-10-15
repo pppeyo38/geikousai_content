@@ -65,6 +65,12 @@ export const Work = ({
 const _WorkWrap = styled.div`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+
+  ${({ theme }) => theme.media.phone`
+    justify-content: center;
+    gap: 20px;
+  `}
 `
 
 const _TitleWrap = styled(RevealWrap)<{ inView: boolean }>`
@@ -81,12 +87,21 @@ const _TitleWrap = styled(RevealWrap)<{ inView: boolean }>`
 
 const _ContentWrap = styled.div`
   max-width: 686px;
+
+  ${({ theme }) => theme.media.phone`
+    max-width: 257px;
+  `}
 `
 
 const _ImageWrap = styled.figure`
   width: 686px;
   height: 456px;
   background-color: #c4c4c4;
+
+  ${({ theme }) => theme.media.phone`
+    width: 239px;
+    height: 159px;
+  `}
 `
 
 const _DetailWrap = styled.div`
@@ -95,6 +110,10 @@ const _DetailWrap = styled.div`
   gap: 16px;
   margin-top: 19px;
   padding-left: 25px;
+
+  ${({ theme }) => theme.media.phone`
+    padding-left: 10px;
+  `}
 `
 
 const _TextWrap = styled(RevealWrap)<{ inView: boolean }>`
@@ -113,4 +132,9 @@ const _BtnWrap = styled.div`
   align-self: flex-end;
   margin-left: 90px;
   transform: translateY(16px);
+
+  ${({ theme }) => theme.media.phone`
+    margin: 52px 0 0 0;
+    transform: translateY(0px);
+  `}
 `
