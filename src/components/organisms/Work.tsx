@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled, { css } from 'styled-components'
 
@@ -10,13 +10,20 @@ import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { workContent } from '@/type/workType'
 import { RevealFromTop, RevealFromLeft, RevealWrap } from '@/styles/textReveal'
 
+type Props = {
+  id: number
+  setFocusId: React.Dispatch<SetStateAction<number>>
+}
+
 export const Work = ({
   title,
   ja,
   creator,
   creator2,
   outline,
-}: workContent) => {
+  id,
+  setFocusId,
+}: workContent & Props) => {
   const { ref, inView } = useInView()
   const [isHorizonReveal, setIsHorizonReveal] = useState<boolean>(false)
 
@@ -25,6 +32,7 @@ export const Work = ({
       setTimeout(() => {
         setIsHorizonReveal(true)
       }, 750)
+      setFocusId(id)
     } else {
       setIsHorizonReveal(false)
     }

@@ -4,7 +4,7 @@ type Props = {
   focusId: number
 }
 
-export const Pagination = ({ focusId }: Props) => {
+export const StepBar = ({ focusId }: Props) => {
   return (
     <_Wrap>
       <_Work1 isActive={focusId === 1} />
@@ -23,6 +23,11 @@ const Rect = styled.div`
 `
 
 const _Wrap = styled.div`
+  position: fixed;
+  top: 20%;
+  right: 4%;
+  transform: translateY(-20%);
+
   * + * {
     margin-top: 10px;
   }
