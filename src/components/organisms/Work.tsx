@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer'
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { TitleEn } from '@/components/atoms/text/TitleEn'
 import { TitleJa } from '@/components/atoms/text/TitleJa'
@@ -7,7 +7,6 @@ import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { workContent } from '@/type/workType'
-
 import { Reveal, RevealContentWrap } from '@/styles/textReveal'
 
 export const Work = ({
@@ -20,14 +19,14 @@ export const Work = ({
   const { ref, inView } = useInView()
 
   return (
-    <_WorkWrap>
-      <_TitleWrap ref={ref} inView={inView}>
+    <_WorkWrap ref={ref}>
+      <_TitleWrap inView={inView}>
         {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
       </_TitleWrap>
       <_ContentWrap>
         <_ImageWrap />
         <_DetailWrap>
-          <Creator>
+          <Creator inView={inView}>
             {creator}
             {creator2 && ` / ${creator2}`}
           </Creator>

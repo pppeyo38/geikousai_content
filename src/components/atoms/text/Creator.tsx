@@ -1,29 +1,52 @@
 import { ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 type Props = {
+  inView: boolean
   children: ReactNode
 }
 
-export const Creator = ({ children }: Props) => {
+export const Creator = ({ inView, children }: Props) => {
   return (
     <_Wrap>
+      <_Span inView={inView} />
       <_P>{children}</_P>
     </_Wrap>
   )
 }
 
+const Stroke = keyframes`
+  100% {
+    height: 100%;
+  }
+`
+
 const _Wrap = styled.div`
+  position: relative;
   display: flex;
   align-items: flex-end;
   height: 75px;
   padding: 0 10px;
-  border-left: 3px solid ${({ theme }) => theme.colors.white};
 
   ${({ theme }) => theme.media.phone`
     height: 50px;
-    border-left: 1px solid #FFF;
   `}
+`
+
+const _Span = styled.span<{ inView: boolean }>`
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0%;
+  background: ${({ theme }) => theme.colors.white};
+
+  ${(props) =>
+    props.inView &&
+    css`
+      animation: 1s ${Stroke} forwards;
+    `}
 `
 
 const _P = styled.p`
