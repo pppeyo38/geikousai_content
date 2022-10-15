@@ -5,14 +5,15 @@ import { RevealWrap, RevealFromLeft } from '@/styles/textReveal'
 
 type Props = {
   inView: boolean
+  isHorizonReveal: boolean
   children: ReactNode
 }
 
-export const Creator = ({ inView, children }: Props) => {
+export const Creator = ({ inView, isHorizonReveal, children }: Props) => {
   return (
     <_Wrap>
       <_Span inView={inView} />
-      <_NameWrap inView={inView}>
+      <_NameWrap inView={isHorizonReveal}>
         <_P>{children}</_P>
       </_NameWrap>
     </_Wrap>

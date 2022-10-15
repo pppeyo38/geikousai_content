@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled, { css } from 'styled-components'
 
@@ -17,6 +18,17 @@ export const Work = ({
   outline,
 }: workContent) => {
   const { ref, inView } = useInView()
+  const [isHorizonReveal, setIsHorizonReveal] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        setIsHorizonReveal(true)
+      }, 750)
+    } else {
+      setIsHorizonReveal(false)
+    }
+  }, [inView])
 
   return (
     <_WorkWrap ref={ref}>
@@ -26,11 +38,11 @@ export const Work = ({
       <_ContentWrap>
         <_ImageWrap />
         <_DetailWrap>
-          <Creator inView={inView}>
+          <Creator inView={inView} isHorizonReveal={isHorizonReveal}>
             {creator}
             {creator2 && ` / ${creator2}`}
           </Creator>
-          <_TextWrap inView={inView}>
+          <_TextWrap inView={isHorizonReveal}>
             <Text>{outline}</Text>
           </_TextWrap>
         </_DetailWrap>
