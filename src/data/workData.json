@@ -1,45 +1,45 @@
 {
   "works": [
     {
-      "title": "Alter:re",
+      "title": "Altar:re",
       "ja": false,
       "thumnail": "",
-      "creator": "3M Seki-chang chucchu",
-      "outline": "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお",
+      "creator": "3M Seki",
+      "outline": "敵に捕まらないように逃げつつ、アイテムを集めたり会話をしたりするホラーテイストのゲーム、芸工祭verです。ビビリの人間が作ったのでそんな怖くないです。",
       "link": ""
     },
     {
-      "title": "北千種さんとの芸工祭",
+      "title": "rollcket",
+      "ja": false,
+      "thumnail": "",
+      "creator": "2M TamagoShogun",
+      "outline": "真っ直ぐ飛ぶロケットを旋回させて障害物を避けるスコアゲームです。",
+      "link": "https://unityroom.com/games/rollcket"
+    },
+    {
+      "title": "Linebow ver.2",
+      "ja": false,
+      "thumnail": "",
+      "creator": "2N Haruken",
+      "outline": "過去作の２Dアクションゲーム「Linebow」のリメイク版です。BGMやアニメーションがパワーアップしました。",
+      "link": "https://unityroom.com/games/linebowver2_ka-neru"
+    },
+    {
+      "title": "北千種さんと過ごす芸工祭",
       "ja": true,
       "thumnail": "",
-      "creator": "3M HirefuseReinachan",
-      "outline": "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお",
-      "link": ""
+      "creator": "2N RunpikaDelta",
+      "outline": "芸術工学部のキャンパス、北千種キャンパスを擬人化した女の子と芸工祭を楽しむノベルゲームです。背景は実際の北千種キャンパスを再現しています。",
+      "link": "https://unityroom.com/games/kitachikusa2022"
     },
     {
-      "title": "Please work! My camera!",
+      "title": "Trick And Treat",
       "ja": false,
       "thumnail": "",
-      "creator": "3M Koro",
-      "creator2": "3M Pin",
-      "outline": "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお",
-      "link": ""
-    },
-    {
-      "title": "サンプル サンプル",
-      "ja": true,
-      "thumnail": "",
-      "creator": "3M HireMori",
-      "outline": "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお",
-      "link": ""
-    },
-    {
-      "title": "Sample Sample",
-      "ja": false,
-      "thumnail": "",
-      "creator": "3M DARE",
-      "outline": "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお",
-      "link": ""
+      "creator": "1N Tou•Ei",
+      "creator2": "1N Momochar",
+      "outline": "ハロウィンをテーマにしたパズルゲームです。お菓子をくっつけて消してオバケを倒します。HP（ヒットポイント）はスコアに合わせて減っていくよう工夫しました。キャラクターもふわふわと動くように表現しました。キャラクターデザインやお菓子の配色も是非お楽しみください。",
+      "link": "https://geikousai-ncu.com/2022/game/Trick_And_Treat/"
     }
   ]
 }
