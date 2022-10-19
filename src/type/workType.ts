@@ -1,7 +1,8 @@
-export type workContent = {
+export type WorkContent = {
   title: string
   ja: boolean
   thumnail: string
+  color: string
   creator: string
   creator2?: string
   outline: string
@@ -9,6 +10,6 @@ export type workContent = {
   onlyPC?: boolean
 }
 
-export type worksDataProps = {
-  worksData: workContent[]
+export type WorksDataProps = {
+  worksData: WorkContent[]
 }

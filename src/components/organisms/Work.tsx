@@ -7,8 +7,9 @@ import { TitleJa } from '@/components/atoms/text/TitleJa'
 import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
-import { workContent } from '@/type/workType'
+import { WorkContent } from '@/type/workType'
 import { RevealFromTop, RevealFromLeft, RevealWrap } from '@/styles/textReveal'
+import { url } from '@/utils/config'
 
 type Props = {
   id: number
@@ -18,12 +19,14 @@ type Props = {
 export const Work = ({
   title,
   ja,
+  thumnail,
+  color,
   creator,
   creator2,
   outline,
   id,
   setFocusId,
-}: workContent & Props) => {
+}: WorkContent & Props) => {
   const { ref, inView } = useInView()
   const [isHorizonReveal, setIsHorizonReveal] = useState<boolean>(false)
 
@@ -44,9 +47,15 @@ export const Work = ({
         {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
       </_TitleWrap>
       <_ContentWrap>
-        <_ImageWrap />
+        <_ImageWrap>
+          <_Image src={url(thumnail)} alt={title} />
+        </_ImageWrap>
         <_DetailWrap>
-          <Creator inView={inView} isHorizonReveal={isHorizonReveal}>
+          <Creator
+            color={color}
+            inView={inView}
+            isHorizonReveal={isHorizonReveal}
+          >
             {creator}
             {creator2 && ` / ${creator2}`}
           </Creator>
@@ -104,6 +113,10 @@ const _ImageWrap = styled.figure`
   `}
 `
 
+const _Image = styled.img`
+  width: 100%;
+`
+
 const _DetailWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -117,6 +130,7 @@ const _DetailWrap = styled.div`
 `
 
 const _TextWrap = styled(RevealWrap)<{ inView: boolean }>`
+  height: 90px;
   &:before {
     bottom: 0;
     right: 0;

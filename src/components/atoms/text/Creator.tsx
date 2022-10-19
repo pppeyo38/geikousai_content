@@ -4,15 +4,21 @@ import styled, { css, keyframes } from 'styled-components'
 import { RevealWrap, RevealFromLeft } from '@/styles/textReveal'
 
 type Props = {
+  color: string
   inView: boolean
   isHorizonReveal: boolean
   children: ReactNode
 }
 
-export const Creator = ({ inView, isHorizonReveal, children }: Props) => {
+export const Creator = ({
+  color,
+  inView,
+  isHorizonReveal,
+  children,
+}: Props) => {
   return (
     <_Wrap>
-      <_Span inView={inView} />
+      <_Span color={color} inView={inView} />
       <_NameWrap inView={isHorizonReveal}>
         <_P>{children}</_P>
       </_NameWrap>
@@ -38,14 +44,14 @@ const _Wrap = styled.div`
   `}
 `
 
-const _Span = styled.span<{ inView: boolean }>`
+const _Span = styled.span<{ color: string; inView: boolean }>`
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 3px;
   height: 0%;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${(props) => props.color};
 
   ${(props) =>
     props.inView &&

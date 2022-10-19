@@ -6,9 +6,9 @@ import { useInView } from 'react-intersection-observer'
 import { StepBar } from '@/components/molecules/StepBar'
 import { HeroArea } from '@/components/organisms/HeroArea'
 import { Work } from '@/components/organisms/Work'
-import { worksDataProps } from '@/type/workType'
+import { WorksDataProps } from '@/type/workType'
 
-export const IndexLayout = ({ worksData }: worksDataProps) => {
+export const IndexLayout = ({ worksData }: WorksDataProps) => {
   const height = use100vh()
   const { ref, inView } = useInView({
     rootMargin: '-200px',
