@@ -1,21 +1,24 @@
 import styled from 'styled-components'
-import { ReactNode } from 'react'
+import LinkIcon from '@/components/atoms/icons/LinkIcon'
+import useMedia from '@/hooks/useMediaQuery'
 
 type Props = {
-  pcOnly: boolean
-  children: ReactNode
+  notPlay: boolean
   gameLink: string
 }
 
-export const LinkButton = ({ pcOnly, children, gameLink }: Props) => {
+export const LinkButton = ({ notPlay, gameLink }: Props) => {
+  const isPc = useMedia('(min-width: 835px)')
+  const iconSize = isPc ? 180 : 108
+
   return (
     <>
-      {pcOnly ? (
-        <_A href={gameLink} target="_blank" rel="noopener noreferrer">
-          {children}
-        </_A>
+      {notPlay ? (
+        <LinkIcon width={iconSize} height={iconSize} />
       ) : (
-        <div>{children}</div>
+        <_A href={gameLink} target="_blank" rel="noopener noreferrer">
+          <LinkIcon width={iconSize} height={iconSize} />
+        </_A>
       )}
     </>
   )

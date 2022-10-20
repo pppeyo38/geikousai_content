@@ -2,7 +2,6 @@ import { SetStateAction, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
 
-import LinkIcon from '@/components/atoms/icons/LinkIcon'
 import { WorkTitle } from '@/components/atoms/text/WorkTitle'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
@@ -68,13 +67,7 @@ export const Work = ({
         </_DetailWrap>
       </_ContentWrap>
       <_BtnWrap notPlay={pcOnly && !isPc}>
-        <LinkButton pcOnly={pcOnly} gameLink={link}>
-          {isPc ? (
-            <LinkIcon width={180} height={180} />
-          ) : (
-            <LinkIcon width={108} height={108} />
-          )}
-        </LinkButton>
+        <LinkButton notPlay={pcOnly && !isPc} gameLink={link} />
       </_BtnWrap>
     </_WorkWrap>
   )
@@ -135,12 +128,17 @@ const _BtnWrap = styled.div<{ notPlay: boolean }>`
   transform: translateY(16px);
 
   ${({ theme }) => theme.media.phone`
-    position: relative;
     display: grid;
     place-content: center;
     width: 100%;
     padding: 9px 0;
     margin: 20px 0 0 0;
+  `}
+
+  ${(props) =>
+    props.notPlay &&
+    `
+    position: relative;
     overflow: hidden;
     transform: translateY(0px);
 
