@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { fadeIn, fadeOut } from '@/styles/fadeAnimation'
+import { fadeIn, fadeOut } from '@/styles/Fade'
 import { url } from '@/utils/config'
 import data from '@/data/backgroundImg.json'
 
@@ -24,7 +24,7 @@ const _BackgroundImgWrap = styled.div<{ img: string; inView: boolean }>`
   background-image: ${(props) => `url(${props.img})`};
   filter: blur(7.5px);
   animation: ${(props) =>
-    props.inView ? css`2s ${fadeIn} forwards` : css`2s ${fadeOut} forwards`};
+    props.inView ? css`.7s ${fadeIn} forwards` : css`.7s ${fadeOut} forwards`};
 
   ${({ theme }) => theme.media.phone`
     display: none;
