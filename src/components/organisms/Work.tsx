@@ -1,15 +1,14 @@
 import { SetStateAction, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { WorkTitle } from '@/components/atoms/text/WorkTitle'
-import { Text } from '@/components/atoms/text/Text'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { Creator } from '@/components/molecules/Creator'
 import { WorkContent } from '@/type/workType'
-import { RevealFromLeft, RevealWrap } from '@/styles/Reveal'
 import { url } from '@/utils/config'
+import { WorkDetail } from '../molecules/WorkDetail'
 
 type Props = {
   id: number
@@ -60,9 +59,7 @@ export const Work = ({
             {creator}
             {creator2 && ` / ${creator2}`}
           </Creator>
-          <_TextWrap inView={isHorizonReveal}>
-            <Text>{outline}</Text>
-          </_TextWrap>
+          <WorkDetail isHorizonReveal={isHorizonReveal}>{outline}</WorkDetail>
         </_DetailWrap>
       </_ContentWrap>
       <_BtnWrap>
@@ -110,26 +107,13 @@ const _Image = styled.img`
 const _DetailWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   margin-top: 19px;
   padding-left: 25px;
 
   ${({ theme }) => theme.media.phone`
     padding-left: 10px;
   `}
-`
-
-const _TextWrap = styled(RevealWrap)<{ inView: boolean }>`
-  height: 90px;
-  &:before {
-    bottom: 0;
-    right: 0;
-    ${(props) =>
-      props.inView &&
-      css`
-        animation: 1.2s ${RevealFromLeft} forwards;
-      `}
-  }
 `
 
 const _BtnWrap = styled.div`
