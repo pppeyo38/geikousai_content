@@ -85,8 +85,9 @@ const _MobileTitleWrap = styled.div<{ inView: boolean }>`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 103%;
-    background: #000;
+    height: 105%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(8%);
     ${(props) =>
       props.inView &&
       css`
