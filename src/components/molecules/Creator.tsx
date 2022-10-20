@@ -56,6 +56,9 @@ const _Stroke = styled.span<{ color: string; inView: boolean }>`
     css`
       animation: 1s ${Stroke} forwards;
     `}
+  ${({ theme }) => theme.media.phone`
+    width: 1px;
+  `}
 `
 
 const _P = styled.p`

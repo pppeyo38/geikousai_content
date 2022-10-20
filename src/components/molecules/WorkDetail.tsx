@@ -23,9 +23,17 @@ const _TextWrap = styled.div<{ inView: boolean }>`
   height: 90px;
   animation: ${(props) => props.inView && css`1.2s ${RevealFromLeft} forwards`};
   overflow: hidden;
+
+  ${({ theme }) => theme.media.phone`
+    height: 110px;
+  `}
 `
 
 const _TextInner = styled.span`
   display: block;
   width: 661px;
+
+  ${({ theme }) => theme.media.phone`
+    width: 247px;
+  `}
 `

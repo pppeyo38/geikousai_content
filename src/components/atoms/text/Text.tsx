@@ -18,7 +18,7 @@ const _P = styled.p`
   letter-spacing: 0.05em;
 
   ${({ theme }) => theme.media.phone`
-    font-size: 16px;
+    font-size: 12px;
     line-height: 22px;
     letter-spacing: 0.03em;
   `}

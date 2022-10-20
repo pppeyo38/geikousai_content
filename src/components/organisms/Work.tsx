@@ -112,6 +112,8 @@ const _DetailWrap = styled.div`
   padding-left: 25px;
 
   ${({ theme }) => theme.media.phone`
+    gap: 12px;
+    margin-top: 16px;
     padding-left: 10px;
   `}
 `
@@ -122,7 +124,11 @@ const _BtnWrap = styled.div`
   transform: translateY(16px);
 
   ${({ theme }) => theme.media.phone`
-    margin: 52px 0 0 0;
+    display: grid;
+    place-content: center;
+    width: 100%;
+    padding: 9px 0;
+    margin: 0;
     transform: translateY(0px);
   `}
 `

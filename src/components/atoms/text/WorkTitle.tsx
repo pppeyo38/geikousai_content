@@ -30,13 +30,13 @@ const EnStyle = css`
 const JaStyle = css`
   font-family: ${({ theme }) => theme.fontFamily.senobi};
   font-size: 66px;
-  line-height: 96px;
+  line-height: 84px;
   letter-spacing: -0.2em;
   text-orientation: sideways;
   ${({ theme }) => theme.media.phone`
     width: 48px;
     font-size: 37px;
-    line-height: 54px;
+    line-height: 45px;
   `}
 `
 
