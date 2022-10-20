@@ -82,12 +82,11 @@ const _MobileTitleWrap = styled.div<{ inView: boolean }>`
   &:before {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -8%;
     left: 0;
     width: 100%;
-    height: 105%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(8%);
+    height: 108%;
+    background: #000;
     ${(props) =>
       props.inView &&
       css`
