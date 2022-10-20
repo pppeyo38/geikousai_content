@@ -1,15 +1,27 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { url } from '@/utils/config'
 
-export const LinkButton = () => {
+type Props = {
+  gameLink: string | undefined
+}
+
+export const LinkButton = ({ gameLink }: Props) => {
   return (
-    <_A href="">
-      <_Img src={url('/LinkButton.svg')} />
-    </_A>
+    <>
+      {gameLink !== undefined ? (
+        <_A href={gameLink} target="_blank" rel="noopener noreferrer">
+          <_Img src={url('/LinkButton.svg')} />
+        </_A>
+      ) : (
+        <_Span>
+          <_Img src={url('/LinkButton.svg')} />
+        </_Span>
+      )}
+    </>
   )
 }
 
-const _A = styled.a`
+const Wrap = css`
   display: block;
   width: 180px;
   height: 180px;
@@ -18,6 +30,14 @@ const _A = styled.a`
     width: 108px;
     height: 108px;
   `}
+`
+
+const _A = styled.a`
+  ${Wrap}
+`
+
+const _Span = styled.span`
+  ${Wrap}
 `
 
 const _Img = styled.img`

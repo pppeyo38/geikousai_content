@@ -23,6 +23,8 @@ export const Work = ({
   creator,
   creator2,
   outline,
+  link,
+  pcOnly,
   id,
   setFocusId,
 }: WorkContent & Props) => {
@@ -63,7 +65,7 @@ export const Work = ({
         </_DetailWrap>
       </_ContentWrap>
       <_BtnWrap>
-        <LinkButton />
+        <LinkButton gameLink={link} />
       </_BtnWrap>
     </_WorkWrap>
   )

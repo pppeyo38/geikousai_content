@@ -7,7 +7,8 @@
       "color": "#CA9554",
       "creator": "3M Seki",
       "outline": "敵に捕まらないように逃げつつ、アイテムを集めたり会話をしたりするホラーテイストのゲーム、芸工祭verです。ビビリの人間が作ったのでそんな怖くないです。",
-      "link": ""
+      "link": "",
+      "pcOnly": true
     },
     {
       "title": "rollcket",
@@ -16,7 +17,8 @@
       "color": "#A1E1FF",
       "creator": "2M TamagoShogun",
       "outline": "真っ直ぐ飛ぶロケットを旋回させて障害物を避けるスコアゲームです。",
-      "link": "https://unityroom.com/games/rollcket"
+      "link": "https://unityroom.com/games/rollcket",
+      "pcOnly": true
     },
     {
       "title": "Linebow ver.2",
@@ -25,7 +27,8 @@
       "color": "#E3E3CA",
       "creator": "2N Haruken",
       "outline": "過去作の2Dアクションゲーム「Linebow」のリメイク版です。BGMやアニメーションがパワーアップしました。",
-      "link": "https://unityroom.com/games/linebowver2_ka-neru"
+      "link": "https://unityroom.com/games/linebowver2_ka-neru",
+      "pcOnly": true
     },
     {
       "title": "北千種さんと過ごす芸工祭",
@@ -34,7 +37,8 @@
       "color": "#FFDE73",
       "creator": "2N RunpikaDelta",
       "outline": "芸術工学部のキャンパス、北千種キャンパスを擬人化した女の子と芸工祭を楽しむノベルゲームです。背景は実際の北千種キャンパスを再現しています。",
-      "link": "https://unityroom.com/games/kitachikusa2022"
+      "link": "https://unityroom.com/games/kitachikusa2022",
+      "pcOnly": false
     },
     {
       "title": "Trick And Treat",
@@ -44,7 +48,8 @@
       "creator": "1N Tou･Ei",
       "creator2": "1N Momochar",
       "outline": "ハロウィンをテーマにしたパズルゲームです。お菓子をくっつけオバケを倒します。HPはスコアに合わせて減っていきます。ふわふわと動くキャラクターやお菓子の配色も是非お楽しみください。",
-      "link": "https://geikousai-ncu.com/2022/game/Trick_And_Treat/"
+      "link": "https://geikousai-ncu.com/2022/game/Trick_And_Treat/",
+      "pcOnly": true
     }
   ]
 }

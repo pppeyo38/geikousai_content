@@ -7,7 +7,7 @@ export type WorkContent = {
   creator2?: string
   outline: string
   link: string
-  onlyPC?: boolean
+  pcOnly: boolean
 }
 
 export type WorksDataProps = {
