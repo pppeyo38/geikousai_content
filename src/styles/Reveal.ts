@@ -14,3 +14,9 @@ export const RevealFromLeft = keyframes`
     width: 100%;
   }
 `
+
+export const slideBlock = keyframes`
+  100% {
+    height: 0%;
+  }
+`

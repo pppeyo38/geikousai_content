@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { RevealFromTop } from '@/styles/Reveal'
+import useMedia from '@/hooks/useMediaQuery'
+import { RevealFromTop, slideBlock } from '@/styles/Reveal'
 
 type Props = {
   children: ReactNode
@@ -9,10 +10,20 @@ type Props = {
 }
 
 export const WorkTitle = ({ children, lang, inView }: Props) => {
+  const isMobile = useMedia('(max-width: 414px)')
+
   return (
-    <_H1 lang={lang}>
-      <_Span inView={inView}>{children}</_Span>
-    </_H1>
+    <>
+      {isMobile ? (
+        <_MobileTitleWrap inView={inView}>
+          <_H1 lang={lang}>{children}</_H1>
+        </_MobileTitleWrap>
+      ) : (
+        <_H1 lang={lang}>
+          <_Span inView={inView}>{children}</_Span>
+        </_H1>
+      )}
+    </>
   )
 }
 
@@ -62,4 +73,24 @@ const _Span = styled.span<{ inView: boolean }>`
   overflow: hidden;
   height: 0%;
   animation: ${(props) => props.inView && css`1s ${RevealFromTop} forwards`};
+`
+
+const _MobileTitleWrap = styled.div<{ inView: boolean }>`
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    ${(props) =>
+      props.inView &&
+      css`
+        animation: 1s ${slideBlock} forwards;
+      `}
+  }
 `
