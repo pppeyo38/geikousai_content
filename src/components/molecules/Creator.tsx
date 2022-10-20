@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 import styled, { css, keyframes } from 'styled-components'
-
-import { RevealWrap, RevealFromLeft } from '@/styles/Reveal'
+import { RevealFromLeft } from '@/styles/Reveal'
 
 type Props = {
   color: string
@@ -18,10 +17,10 @@ export const Creator = ({
 }: Props) => {
   return (
     <_Wrap>
-      <_Span color={color} inView={inView} />
-      <_NameWrap inView={isHorizonReveal}>
-        <_P>{children}</_P>
-      </_NameWrap>
+      <_Stroke color={color} inView={inView} />
+      <_P>
+        <_Span inView={isHorizonReveal}>{children}</_Span>
+      </_P>
     </_Wrap>
   )
 }
@@ -44,7 +43,7 @@ const _Wrap = styled.div`
   `}
 `
 
-const _Span = styled.span<{ color: string; inView: boolean }>`
+const _Stroke = styled.span<{ color: string; inView: boolean }>`
   content: '';
   position: absolute;
   top: 0;
@@ -52,7 +51,6 @@ const _Span = styled.span<{ color: string; inView: boolean }>`
   width: 3px;
   height: 0%;
   background: ${(props) => props.color};
-
   ${(props) =>
     props.inView &&
     css`
@@ -60,21 +58,8 @@ const _Span = styled.span<{ color: string; inView: boolean }>`
     `}
 `
 
-const _NameWrap = styled(RevealWrap)<{ inView: boolean }>`
-  &:before {
-    z-index: 1;
-    top: 0;
-    right: 0;
-    height: 120%;
-    ${(props) =>
-      props.inView &&
-      css`
-        animation: 1.2s ${RevealFromLeft} forwards;
-      `}
-  }
-`
-
 const _P = styled.p`
+  width: fit-content;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.DIN};
   font-size: 24px;
@@ -86,4 +71,12 @@ const _P = styled.p`
     font-size: 16px;
     line-height: 19px;
   `}
+`
+
+const _Span = styled.span<{ inView: boolean }>`
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+  animation: ${(props) => props.inView && css`1.2s ${RevealFromLeft} forwards`};
 `

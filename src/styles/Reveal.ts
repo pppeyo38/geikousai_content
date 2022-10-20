@@ -8,7 +8,7 @@ export const RevealFromTop = keyframes`
 
 export const RevealFromLeft = keyframes`
   100% {
-    width: 0%;
+    width: 100%;
   }
 `
 
