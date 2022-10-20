@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import CSR from '@/components/templates/CSR'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
 import { theme } from '@/styles/theme/theme'
@@ -8,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <CSR>
+          <Component {...pageProps} />
+        </CSR>
       </ThemeProvider>
     </>
   )

@@ -23,6 +23,7 @@ const _BackgroundImgWrap = styled.div<{ img: string; inView: boolean }>`
   height: 272px;
   background-image: ${(props) => `url(${props.img})`};
   filter: blur(7.5px);
+  opacity: 0;
   animation: ${(props) =>
     props.inView ? css`.7s ${fadeIn} forwards` : css`.7s ${fadeOut} forwards`};
 
