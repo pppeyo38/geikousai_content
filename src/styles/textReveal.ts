@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 
 export const RevealFromTop = keyframes`
   100% {
-    height: 0%;
+    height: 100%;
   }
 `
 

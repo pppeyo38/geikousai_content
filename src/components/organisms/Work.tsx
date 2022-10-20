@@ -2,14 +2,13 @@ import { SetStateAction, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled, { css } from 'styled-components'
 
-import { TitleEn } from '@/components/atoms/text/TitleEn'
-import { TitleJa } from '@/components/atoms/text/TitleJa'
+import { WorkTitle } from '@/components/atoms/text/WorkTitle'
 import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { WorkContent } from '@/type/workType'
-import { RevealFromTop, RevealFromLeft, RevealWrap } from '@/styles/textReveal'
+import { RevealFromLeft, RevealWrap } from '@/styles/textReveal'
 import { url } from '@/utils/config'
 
 type Props = {
@@ -44,9 +43,9 @@ export const Work = ({
 
   return (
     <_WorkWrap ref={ref}>
-      <_TitleWrap inView={inView}>
-        {ja ? <TitleJa>{title}</TitleJa> : <TitleEn>{title}</TitleEn>}
-      </_TitleWrap>
+      <WorkTitle lang={ja ? 'ja' : 'en'} inView={inView}>
+        {title}
+      </WorkTitle>
       <_ContentWrap>
         <_ImageWrap>
           <_Image src={url(thumnail)} alt={title} />
@@ -82,18 +81,6 @@ const _WorkWrap = styled.div`
     justify-content: center;
     gap: 20px;
   `}
-`
-
-const _TitleWrap = styled(RevealWrap)<{ inView: boolean }>`
-  &:before {
-    bottom: 0;
-    left: 0;
-    ${(props) =>
-      props.inView &&
-      css`
-        animation: 1s ${RevealFromTop} forwards;
-      `}
-  }
 `
 
 const _ContentWrap = styled.div`
