@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { RevealFromTop } from '@/styles/textReveal'
+import { RevealFromTop } from '@/styles/Reveal'
 
 type Props = {
   children: ReactNode
@@ -33,7 +33,6 @@ const JaStyle = css`
   line-height: 96px;
   letter-spacing: -0.2em;
   text-orientation: sideways;
-
   ${({ theme }) => theme.media.phone`
     width: 48px;
     font-size: 37px;

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 
-import { RevealWrap, RevealFromLeft } from '@/styles/textReveal'
+import { RevealWrap, RevealFromLeft } from '@/styles/Reveal'
 
 type Props = {
   color: string

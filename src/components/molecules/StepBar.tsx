@@ -1,21 +1,18 @@
-import styled, { css } from 'styled-components'
-import { RevealFromTop, HiddenFromBtm } from '@/styles/textReveal'
+import styled from 'styled-components'
 
 type Props = {
   focusId: number
-  inView: boolean
+  isHidden: boolean
 }
 
-export const StepBar = ({ focusId, inView }: Props) => {
+export const StepBar = ({ focusId, isHidden }: Props) => {
   return (
-    <_Wrap>
-      <_RevealWrap inView={inView}>
-        <_Work1 isActive={focusId === 1} />
-        <_Work2 isActive={focusId === 2} />
-        <_Work3 isActive={focusId === 3} />
-        <_Work4 isActive={focusId === 4} />
-        <_Work5 isActive={focusId === 5} />
-      </_RevealWrap>
+    <_Wrap isHidden={isHidden}>
+      <_Work1 isActive={focusId === 1} />
+      <_Work2 isActive={focusId === 2} />
+      <_Work3 isActive={focusId === 3} />
+      <_Work4 isActive={focusId === 4} />
+      <_Work5 isActive={focusId === 5} />
     </_Wrap>
   )
 }
@@ -27,12 +24,16 @@ const Rect = styled.div`
   transition: all 0.7s;
 `
 
-const _Wrap = styled.div`
+const _Wrap = styled.div<{ isHidden: boolean }>`
   position: fixed;
   z-index: 1;
   top: 20%;
   right: 4%;
   transform: translateY(-20%);
+  opacity: 0;
+  overflow: hidden;
+  opacity: ${(props) => (props.isHidden ? '0' : '1')};
+  transition: all 0.3s;
 
   * + * {
     margin-top: 10px;
@@ -41,29 +42,6 @@ const _Wrap = styled.div`
   ${({ theme }) => theme.media.phone`
     display: none;
   `}
-`
-
-const _RevealWrap = styled.div<{ inView: boolean }>`
-  width: 20px;
-  height: 350px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: ${({ theme }) => theme.colors.black};
-    ${(props) =>
-      props.inView
-        ? css`
-            animation: 0.5s ${RevealFromTop} forwards;
-          `
-        : css`
-            animation: 0.5s ${HiddenFromBtm} forwards;
-          `}
-  }
 `
 
 const _Work1 = styled(Rect)<{ isActive: boolean }>`

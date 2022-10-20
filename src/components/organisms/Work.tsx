@@ -8,7 +8,7 @@ import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { WorkContent } from '@/type/workType'
-import { RevealFromLeft, RevealWrap } from '@/styles/textReveal'
+import { RevealFromLeft, RevealWrap } from '@/styles/Reveal'
 import { url } from '@/utils/config'
 
 type Props = {
