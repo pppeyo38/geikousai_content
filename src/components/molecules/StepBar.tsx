@@ -29,6 +29,7 @@ const Rect = styled.div`
 
 const _Wrap = styled.div`
   position: fixed;
+  z-index: 1;
   top: 20%;
   right: 4%;
   transform: translateY(-20%);

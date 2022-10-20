@@ -20,8 +20,8 @@ export const IndexLayout = ({ worksData }: WorksDataProps) => {
   return (
     <_Container height={useHeight}>
       <_Section ref={ref} height={useHeight}>
-        <StepBar focusId={focusId} inView={!inView} />
         <HeroArea />
+        <StepBar focusId={focusId} inView={!inView} />
       </_Section>
       {worksData.map((item, index) => (
         <_Section key={index} height={useHeight}>

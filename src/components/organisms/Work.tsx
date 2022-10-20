@@ -7,6 +7,7 @@ import { TitleJa } from '@/components/atoms/text/TitleJa'
 import { Text } from '@/components/atoms/text/Text'
 import { Creator } from '@/components/atoms/text/Creator'
 import { LinkButton } from '@/components/atoms/button/LinkButton'
+import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { WorkContent } from '@/type/workType'
 import { RevealFromTop, RevealFromLeft, RevealWrap } from '@/styles/textReveal'
 import { url } from '@/utils/config'
@@ -49,6 +50,7 @@ export const Work = ({
       <_ContentWrap>
         <_ImageWrap>
           <_Image src={url(thumnail)} alt={title} />
+          {inView && <BackgroundImg focusId={id} />}
         </_ImageWrap>
         <_DetailWrap>
           <Creator
@@ -103,6 +105,7 @@ const _ContentWrap = styled.div`
 `
 
 const _ImageWrap = styled.figure`
+  position: relative;
   width: 686px;
   height: 456px;
   background-color: #c4c4c4;
