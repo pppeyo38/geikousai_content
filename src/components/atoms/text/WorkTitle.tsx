@@ -41,7 +41,6 @@ const JaStyle = css`
 `
 
 const _H1 = styled.h1<{ lang: string }>`
-  display: inline-block;
   height: fit-content;
   ${(props) =>
     props.lang === 'ja'
@@ -59,6 +58,7 @@ const _H1 = styled.h1<{ lang: string }>`
 
 const _Span = styled.span<{ inView: boolean }>`
   display: block;
+  white-space: nowrap;
   overflow: hidden;
   height: 0%;
   animation: ${(props) => props.inView && css`1s ${RevealFromTop} forwards`};
