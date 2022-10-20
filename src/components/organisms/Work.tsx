@@ -2,13 +2,14 @@ import { SetStateAction, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
 
+import LinkIcon from '@/components/atoms/icons/LinkIcon'
 import { WorkTitle } from '@/components/atoms/text/WorkTitle'
-import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
 import { Creator } from '@/components/molecules/Creator'
+import { WorkDetail } from '@/components/molecules/WorkDetail'
 import { WorkContent } from '@/type/workType'
+import useMedia from '@/hooks/useMediaQuery'
 import { url } from '@/utils/config'
-import { WorkDetail } from '../molecules/WorkDetail'
 
 type Props = {
   id: number
@@ -30,6 +31,7 @@ export const Work = ({
 }: WorkContent & Props) => {
   const { ref, inView } = useInView()
   const [isHorizonReveal, setIsHorizonReveal] = useState<boolean>(false)
+  const isPc = useMedia('(min-width: 950px)')
 
   useEffect(() => {
     if (inView) {
@@ -65,7 +67,7 @@ export const Work = ({
         </_DetailWrap>
       </_ContentWrap>
       <_BtnWrap>
-        <LinkButton gameLink={link} />
+        <LinkIcon width={180} height={180} />
       </_BtnWrap>
     </_WorkWrap>
   )

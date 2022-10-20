@@ -1,27 +1,25 @@
-import styled, { css } from 'styled-components'
-import { url } from '@/utils/config'
+import styled from 'styled-components'
+import LinkIcon from '@/components/atoms/icons/LinkIcon'
 
 type Props = {
-  gameLink: string | undefined
+  gameLink: string
 }
 
 export const LinkButton = ({ gameLink }: Props) => {
   return (
     <>
-      {gameLink !== undefined ? (
+      {gameLink ? (
         <_A href={gameLink} target="_blank" rel="noopener noreferrer">
-          <_Img src={url('/LinkButton.svg')} />
+          <LinkIcon />
         </_A>
       ) : (
-        <_Span>
-          <_Img src={url('/LinkButton.svg')} />
-        </_Span>
+        <LinkIcon />
       )}
     </>
   )
 }
 
-const Wrap = css`
+const _A = styled.a`
   display: block;
   width: 180px;
   height: 180px;
@@ -30,17 +28,4 @@ const Wrap = css`
     width: 108px;
     height: 108px;
   `}
-`
-
-const _A = styled.a`
-  ${Wrap}
-`
-
-const _Span = styled.span`
-  ${Wrap}
-`
-
-const _Img = styled.img`
-  width: 100%;
-  height: 100%;
 `
