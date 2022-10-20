@@ -1,19 +1,21 @@
 import styled from 'styled-components'
-import LinkIcon from '@/components/atoms/icons/LinkIcon'
+import { ReactNode } from 'react'
 
 type Props = {
+  pcOnly: boolean
+  children: ReactNode
   gameLink: string
 }
 
-export const LinkButton = ({ gameLink }: Props) => {
+export const LinkButton = ({ pcOnly, children, gameLink }: Props) => {
   return (
     <>
-      {gameLink ? (
+      {pcOnly ? (
         <_A href={gameLink} target="_blank" rel="noopener noreferrer">
-          <LinkIcon />
+          {children}
         </_A>
       ) : (
-        <LinkIcon />
+        <div>{children}</div>
       )}
     </>
   )
@@ -21,11 +23,4 @@ export const LinkButton = ({ gameLink }: Props) => {
 
 const _A = styled.a`
   display: block;
-  width: 180px;
-  height: 180px;
-
-  ${({ theme }) => theme.media.phone`
-    width: 108px;
-    height: 108px;
-  `}
 `

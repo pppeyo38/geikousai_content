@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import LinkIcon from '@/components/atoms/icons/LinkIcon'
 import { WorkTitle } from '@/components/atoms/text/WorkTitle'
 import { BackgroundImg } from '@/components/atoms/images/BackgroundImg'
+import { LinkButton } from '@/components/atoms/button/LinkButton'
 import { Creator } from '@/components/molecules/Creator'
 import { WorkDetail } from '@/components/molecules/WorkDetail'
 import { WorkContent } from '@/type/workType'
@@ -66,8 +67,14 @@ export const Work = ({
           <WorkDetail isHorizonReveal={isHorizonReveal}>{outline}</WorkDetail>
         </_DetailWrap>
       </_ContentWrap>
-      <_BtnWrap>
-        <LinkIcon width={180} height={180} />
+      <_BtnWrap notPlay={pcOnly && !isPc}>
+        <LinkButton pcOnly={pcOnly} gameLink={link}>
+          {isPc ? (
+            <LinkIcon width={180} height={180} />
+          ) : (
+            <LinkIcon width={108} height={108} />
+          )}
+        </LinkButton>
       </_BtnWrap>
     </_WorkWrap>
   )
@@ -122,17 +129,43 @@ const _DetailWrap = styled.div`
   `}
 `
 
-const _BtnWrap = styled.div`
+const _BtnWrap = styled.div<{ notPlay: boolean }>`
   align-self: flex-end;
   margin-left: 90px;
   transform: translateY(16px);
 
   ${({ theme }) => theme.media.phone`
+    position: relative;
     display: grid;
     place-content: center;
     width: 100%;
     padding: 9px 0;
-    margin: 0;
+    margin: 20px 0 0 0;
+    overflow: hidden;
     transform: translateY(0px);
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      width: 700px;
+      height: 40px;
+      background-image: url(${url('/PConlyUnder.svg')});
+      transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 20;
+      top: 50%;
+      left: 50%;
+      width: 700px;
+      height: 40px;
+      background-image: url(${url('/PConly.svg')});
+      transform: translate(-50%, -50%) rotate(-7deg);
+    }
   `}
 `
