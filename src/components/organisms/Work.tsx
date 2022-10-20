@@ -50,7 +50,7 @@ export const Work = ({
       <_ContentWrap>
         <_ImageWrap>
           <_Image src={url(thumnail)} alt={title} />
-          {inView && <BackgroundImg focusId={id} />}
+          <BackgroundImg focusId={id} inView={inView} />
         </_ImageWrap>
         <_DetailWrap>
           <Creator
