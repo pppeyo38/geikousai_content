@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { url } from '@/utils/config'
 
 export const HeroArea = () => {
   return (
@@ -43,35 +44,38 @@ const _Section = styled.section`
 
 const _divOne = styled.div`
   grid-area: One;
-  background: #d9d9d9;
+  background-image: url(${url('/images/sticker/alter.png')});
+  background-size: cover;
 `
 
 const _divTwo = styled.div`
   grid-area: Two;
-  background: #d9d9d9;
+  background-image: url(${url('/images/sticker/rollcket.png')});
+  background-size: cover;
 `
 
 const _divThree = styled.div`
   grid-area: Three;
-  background: #d9d9d9;
 `
 
 const _divFour = styled.div`
   grid-area: Four;
-  background: #d9d9d9;
+  background-image: url(${url('/images/sticker/toritoori.png')});
+  background-size: cover;
 `
 
 const _divFive = styled.div`
   grid-area: Five;
-  background: #d9d9d9;
+  background-image: url(${url('/images/sticker/linebow.png')});
+  background-size: cover;
 `
 
 const _divSix = styled.div`
   grid-area: Six;
-  background: #d9d9d9;
 `
 
 const _divSeven = styled.div`
   grid-area: Seven;
-  background: #d9d9d9;
+  background-image: url(${url('/images/sticker/kitatikusa.png')});
+  background-size: cover;
 `
