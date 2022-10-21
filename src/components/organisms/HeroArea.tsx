@@ -38,7 +38,7 @@ const _Section = styled.section`
     "One One Five"
     "Two Three Five"
     "Two Four Four"
-    "Seven Six Six";
+    "Six Seven Seven";
   `}
 `
 
@@ -56,6 +56,9 @@ const _divTwo = styled.div`
 
 const _divThree = styled.div`
   grid-area: Three;
+  background-image: url(${url('/images/sticker/nowPlaying.svg')});
+  background-size: contain;
+  background-repeat: no-repeat;
 `
 
 const _divFour = styled.div`
@@ -72,6 +75,9 @@ const _divFive = styled.div`
 
 const _divSix = styled.div`
   grid-area: Six;
+  background-image: url(${url('/images/sticker/title.svg')});
+  background-size: contain;
+  background-repeat: no-repeat;
 `
 
 const _divSeven = styled.div`
