@@ -1,4 +1,4 @@
-const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+const urlPrefix = process.env.IS_DEV ? '' : '/2022/game'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
