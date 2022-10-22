@@ -15,6 +15,34 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="./favicon.ico" />
+          <meta property="og:title" content="芸工祭2022 ゲームサイト" />
+          <meta
+            property="og:url"
+            content="https://geikousai-ncu.com/2022/game"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:description"
+            content="名古屋市立大学芸術工学部の大学祭、芸工祭2022『GOOOON』で制作したゲームサイトです。ぜひプレイしてみてください！"
+          />
+          <meta property="og:site_name" content="芸工祭2022 ゲームサイト" />
+          <meta property="og:image" content="./images/ogp.ong" />
+          <meta
+            name="keywords"
+            content="芸工祭,芸工祭2022,名古屋市,芸術工学,名古屋市立大学,GOOOON,ぐーん,グーン,ゴーオン,ゲーム"
+          />
+          <meta
+            name="description"
+            content="名古屋市立大学芸術工学部の大学祭、芸工祭2022『GOOOON』で制作したゲームサイトです。ぜひプレイしてみてください！"
+          />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="芸工祭2022 ゲームサイト" />
+          <meta
+            name="twitter:description"
+            content="名古屋市立大学芸術工学部の大学祭、芸工祭2022『GOOOON』で制作したゲームサイトです。ぜひプレイしてみてください！"
+          />
+          <meta name="twitter:image" content="./images/ogp.ong" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
