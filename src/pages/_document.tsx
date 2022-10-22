@@ -26,7 +26,10 @@ export default class MyDocument extends Document {
             content="名古屋市立大学芸術工学部の大学祭、芸工祭2022『GOOOON』で制作したゲームサイトです。ぜひプレイしてみてください！"
           />
           <meta property="og:site_name" content="芸工祭2022 ゲームサイト" />
-          <meta property="og:image" content="./images/ogp.ong" />
+          <meta
+            property="og:image"
+            content="https://geikousai-ncu.com/2022/game/images/ogp.ong"
+          />
           <meta
             name="keywords"
             content="芸工祭,芸工祭2022,名古屋市,芸術工学,名古屋市立大学,GOOOON,ぐーん,グーン,ゴーオン,ゲーム"
@@ -42,7 +45,10 @@ export default class MyDocument extends Document {
             name="twitter:description"
             content="名古屋市立大学芸術工学部の大学祭、芸工祭2022『GOOOON』で制作したゲームサイトです。ぜひプレイしてみてください！"
           />
-          <meta name="twitter:image" content="./images/ogp.ong" />
+          <meta
+            name="twitter:image"
+            content="https://geikousai-ncu.com/2022/game/images/ogp.ong"
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
