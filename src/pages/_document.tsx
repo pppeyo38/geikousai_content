@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="芸工祭2022 ゲームサイト" />
           <meta
             property="og:url"
-            content="https://geikousai-ncu.com/2022/game"
+            content="https://geikousai-ncu.com/2022/game/"
           />
           <meta property="og:type" content="website" />
           <meta
